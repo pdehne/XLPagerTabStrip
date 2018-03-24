@@ -24,7 +24,7 @@
 
 import Foundation
 
-@objc public struct IndicatorInfo {
+@objc public class IndicatorInfo : NSObject, ExpressibleByStringLiteral {
 
     public var title: String?
     public var image: UIImage?
