@@ -24,41 +24,52 @@
 
 import Foundation
 
-public struct IndicatorInfo {
+@objc public struct IndicatorInfo {
 
     public var title: String?
     public var image: UIImage?
     public var highlightedImage: UIImage?
     public var userInfo: Any?
     
-    public init(title: String?) {
+    @objc public init(title: String?) {
         self.title = title
     }
     
-    public init(image: UIImage?, highlightedImage: UIImage? = nil, userInfo: Any? = nil) {
+    @objc public init(image: UIImage?, highlightedImage: UIImage? = nil, userInfo: Any? = nil) {
         self.image = image
         self.highlightedImage = highlightedImage
     }
     
-    public init(title: String?, image: UIImage?, highlightedImage: UIImage? = nil, userInfo: Any? = nil) {
+    @objc public init(title: String?, image: UIImage?, highlightedImage: UIImage? = nil, userInfo: Any? = nil) {
         self.title = title
         self.image = image
         self.highlightedImage = highlightedImage
     }
 
-}
-
-extension IndicatorInfo : ExpressibleByStringLiteral {
-
-    public init(stringLiteral value: String) {
+    required public init(stringLiteral value: String) {
         title = value
     }
 
-    public init(extendedGraphemeClusterLiteral value: String) {
+    required public init(extendedGraphemeClusterLiteral value: String) {
         title = value
     }
 
-    public init(unicodeScalarLiteral value: String) {
+    required public init(unicodeScalarLiteral value: String) {
         title = value
     }
 }
+
+//extension IndicatorInfo : ExpressibleByStringLiteral {
+//
+//    public init(stringLiteral value: String) {
+//        title = value
+//    }
+//
+//    public init(extendedGraphemeClusterLiteral value: String) {
+//        title = value
+//    }
+//
+//    public init(unicodeScalarLiteral value: String) {
+//        title = value
+//    }
+//}
